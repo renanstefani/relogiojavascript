@@ -53,22 +53,11 @@
                 
                 function relogioFunciona(){
                     var dataAtual = new Date();
-                    var horaAtual = dataAtual.getHours();
-                    var minutoAtual = dataAtual.getMinutes();
-                    var segundoAtual = dataAtual.getSeconds();
-
-                    if(horaAtual < 10){
-                        horaAtual = '0' + horaAtual;
-                    }
-                    if(minutoAtual < 10){
-                        minutoAtual = '0' + minutoAtual;
-                    }
-                    if(segundoAtual < 10){
-                        segundoAtual = '0' + segundoAtual;
-                    }
+                    var horaAtual = dataAtual.getHours() < 10 ? '0' + dataAtual.getHours() : dataAtual.getHours();
+                    var minutoAtual = dataAtual.getMinutes() < 10 ? '0' + dataAtual.getMinutes() : dataAtual.getMinutes();
+                    var segundoAtual = dataAtual.getSeconds() < 10 ? '0' + dataAtual.getSeconds() : dataAtual.getSeconds();
                     
-                    $relogio.textContent = horaAtual + ':' + minutoAtual + ':' + segundoAtual;
-                    
+                    $relogio.textContent = horaAtual + ':' + minutoAtual + ':' + segundoAtual;                   
                 };
             })()
 
